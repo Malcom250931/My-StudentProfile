@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Malcom Kazuva - Computer Information Student profile page">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malcom Kazuva | Profile</title>
+    <style>
+        :root {
+            --primary: #1d4ed8;
+            --primary-dark: #1e3a8a;
+            --accent: #e0f2fe;
+            --bg: #f8fafc;
+            --card: #ffffff;
+            --text: #1f2937;
+            --muted: #4b5563;
+            --border: #dbeafe;
+            --shadow: rgba(15, 23, 42, 0.08);
+            --label: #111827;
+            --field-bg: #f9fafb;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #f4f7fb, #dfeaff);
+            color: var(--text);
+            line-height: 1.6;
+            min-width: 320px;
+        }
+
+        a {
+            color: var(--primary-dark);
+            text-decoration: none;
+        }
+
+        header {
+            background: linear-gradient(90deg, var(--primary), var(--primary-dark));
+            color: #fff;
+            text-align: center;
+            padding: 32px 20px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 8px;
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+
+        .tagline {
+            margin: 0;
+            font-size: 1.1rem;
+            opacity: 0.95;
+        }
+
+        nav {
+            margin-top: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav a {
+            color: #fff;
+            font-weight: bold;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px 40px;
+        }
+
+        section {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            box-shadow: 0 12px 30px var(--shadow);
+            padding: 28px;
+            margin-bottom: 24px;
+        }
+
+        h2, h3 {
+            color: var(--primary-dark);
+            margin-top: 0;
+        }
+
+        .profile-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
+            gap: 26px;
+            align-items: center;
+        }
+
+        .profile-pic {
+            width: 180px;
+            height: 180px;
+            max-width: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--primary);
+            display: block;
+            margin: 0 auto;
+            box-shadow: 0 10px 18px rgba(29, 78, 216, 0.2);
+        }
+
+        .quick-facts {
+            background: var(--accent);
+            border-left: 5px solid var(--primary);
+            border-radius: 12px;
+            padding: 18px 20px;
+            margin-top: 20px;
+        }
+
+        .quick-facts ul {
+            margin: 0;
+            padding-left: 20px;
+        }
+
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0;
+            list-style: none;
+            margin: 20px 0 0;
+        }
+
+        .skills li {
+            background: #eff6ff;
+            color: var(--primary-dark);
+            border: 1px solid #bfdbfe;
+            border-radius: 999px;
+            padding: 8px 14px;
+            font-weight: bold;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 18px;
+            max-width: 700px;
+        }
+
+        .field {
+            display: grid;
+            gap: 8px;
+        }
+
+        label {
+            color: var(--label);
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 10px;
+            background: var(--field-bg);
+            font: inherit;
+            color: var(--text);
+        }
+
+        input:focus, textarea:focus {
+            outline: 3px solid rgba(29, 78, 216, 0.2);
+            border-color: var(--primary);
+        }
+
+        button {
+            background: var(--primary);
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: var(--primary-dark);
+        }
+
+        footer {
+            background: #111827;
+            color: #fff;
+            text-align: center;
+            padding: 18px 20px;
+        }
+
+        @media (max-width: 700px) {
+            main {
+                padding: 0 14px 30px;
+            }
+
+            section {
+                padding: 20px 16px;
+            }
+
+            .profile-layout {
+                grid-template-columns: minmax(0, 1fr);
+                text-align: center;
+            }
+
+            .profile-pic {
+                width: 150px;
+                height: 150px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .skills {
+                justify-content: center;
+            }
+
+            .quick-facts {
+                margin-top: 16px;
+            }
+
+            input, textarea, button {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 400px) {
+            header {
+                padding: 24px 14px 18px;
+            }
+
+            main {
+                padding-right: 10px;
+                padding-left: 10px;
+            }
+
+            section {
+                padding: 18px 12px;
+            }
+
+            .profile-pic {
+                width: 140px;
+                height: 140px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Malcom Kazuva</h1>
+        <p class="tagline">Computer Information Student</p>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="about">
+            <div class="profile-layout">
+                <img class="profile-pic" src="profile.jpg" alt="Portrait photo of Malcom Kazuva">
+                <article>
+                    <h2>About Me</h2>
+                    <p>
+                        I am Malcom Kazuva, a Computer Information Student interested in technology,
+                        web development, and computer information systems. I enjoy learning how technology
+                        can be used to solve problems and improve people’s lives.
+                    </p>
+                    <p>
+                        I am passionate about building practical digital solutions, strengthening my
+                        technical skills, and continuing to grow in the field of information technology.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section id="skills">
+            <h2>Skills &amp; Interests</h2>
+            <ul class="skills" aria-label="Skills and interests">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>Web Design</li>
+                <li>UI/UX</li>
+                <li>Problem Solving</li>
+                <li>Technology</li>
+            </ul>
+        </section>
+
+        <section id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading">Contact Me</h2>
+            <form class="contact-form" action="#" method="post">
+                <div class="field">
+                    <label for="name">Full Name</label>
+                    <input id="name" name="name" type="text" placeholder="Enter your full name" required minlength="2" pattern="[A-Za-z\s]+">
+                </div>
+
+                <div class="field">
+                    <label for="email">Email Address</label>
+                    <input id="email" name="email" type="email" placeholder="name@example.com" required>
+                </div>
+
+                <div class="field">
+                    <label for="phone">Phone Number</label>
+                    <input id="phone" name="phone" type="tel" placeholder="+27 12 345 6789" pattern="[0-9+\s()-]{10,}"
+                        required>
+                </div>
+
+                <div class="field">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="5" placeholder="Write your message here" required minlength="10"></textarea>
+                </div>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <aside class="quick-facts" aria-label="Quick facts">
+            <h3>Quick Facts</h3>
+            <ul>
+                <li>Based in the field of Computer Information Systems</li>
+                <li>Interested in website development and digital innovation</li>
+                <li>Enjoys learning and building practical solutions</li>
+            </ul>
+        </aside>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Malcom Kazuva. All rights reserved.</p>
+    </footer>
+</body>
+
+</html>
